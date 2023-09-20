@@ -1,0 +1,13 @@
+version: '3.9'
+
+# test
+services:
+  next:
+    image: public.ecr.aws/docker/library/node:20-alpine3.17
+    container_name: next
+    working_dir: /next13_app
+    command: ["npm", "run", "dev"]
+    volumes:
+      - ./next13_app:/next13_app
+    ports:
+      - 3000:3000
